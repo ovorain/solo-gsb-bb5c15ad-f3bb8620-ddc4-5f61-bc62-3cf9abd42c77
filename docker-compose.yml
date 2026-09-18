@@ -1,0 +1,9 @@
+services:
+  seal-chain-api:
+    build: .
+    image: seal-chain-api:latest
+    container_name: seal-chain-api
+    ports:
+      # 宿主机端口可用环境变量 PORT 覆盖，默认 8000
+      - "${PORT:-8000}:8000"
+    restart: unless-stopped
